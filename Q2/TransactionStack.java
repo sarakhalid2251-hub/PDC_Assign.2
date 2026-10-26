@@ -1,4 +1,3 @@
-
 class TransactionStack {
     private char[] data = new char[100];
     private int top = -1;
