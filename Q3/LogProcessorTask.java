@@ -6,4 +6,12 @@ class LogProcessorTask implements Runnable {
                 Thread.currentThread().getName()
                 + " - Log iteration " + i
             );
-            
+             try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return;
+            }
+        }
+    }
+}
