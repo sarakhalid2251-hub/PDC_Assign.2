@@ -16,3 +16,10 @@ public class PacketSymmetryAuditor {
                 break;
             }
         }
+          if (palindrome) {
+            System.out.println("Packet is a palindrome");
+        } else {
+            System.out.println("Packet is not a palindrome");
+        }
+    }
+}
