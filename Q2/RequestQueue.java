@@ -11,3 +11,10 @@ class RequestQueue {
             size++;
         }
     }
+        public void enqueue(char c) {
+        if (size < data.length) {
+            rear = (rear + 1) % data.length;
+            data[rear] = c;
+            size++;
+        }
+    }
