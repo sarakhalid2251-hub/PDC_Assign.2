@@ -18,3 +18,14 @@ class RequestQueue {
             size++;
         }
     }
+   public char dequeue() {
+        char c = data[front];
+        front = (front + 1) % data.length;
+        size--;
+        return c;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
