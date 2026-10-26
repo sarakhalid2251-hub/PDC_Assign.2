@@ -5,4 +5,12 @@ class TelemetryThread extends Thread {
             System.out.println(
                 getName() + " - CPU and Memory update " + i
             );
-            
+            try {
+                Thread.sleep(800);
+            } catch (InterruptedException e) {
+                interrupt();
+                return;
+            }
+        }
+    }
+}
