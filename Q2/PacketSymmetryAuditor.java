@@ -8,3 +8,11 @@ public class PacketSymmetryAuditor {
             stack.push(packet.charAt(i));
             queue.enqueue(packet.charAt(i));
         }
+    boolean palindrome = true;
+
+        while (!stack.isEmpty() && !queue.isEmpty()) {
+            if (stack.pop() != queue.dequeue()) {
+                palindrome = false;
+                break;
+            }
+        }
