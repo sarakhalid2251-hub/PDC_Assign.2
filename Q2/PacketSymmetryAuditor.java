@@ -4,4 +4,7 @@ public class PacketSymmetryAuditor {
 
         TransactionStack stack = new TransactionStack();
         RequestQueue queue = new RequestQueue();
-        
+         for (int i = 0; i < packet.length(); i++) {
+            stack.push(packet.charAt(i));
+            queue.enqueue(packet.charAt(i));
+        }
