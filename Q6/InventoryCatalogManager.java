@@ -12,3 +12,15 @@ public class InventoryCatalogManager {
 
         benchmark(map, "SynchronizedMap");
     }
+    public static void benchmarkConcurrentMap()
+            throws InterruptedException {
+        Map<String, Integer> map = new ConcurrentHashMap<>();
+
+        benchmark(map, "ConcurrentHashMap");
+    }
+
+    public static void benchmark(Map<String, Integer> map, String name)
+            throws InterruptedException {
+        for (int i = 0; i < 100; i++) {
+            map.put("P" + i, 100);
+        }
