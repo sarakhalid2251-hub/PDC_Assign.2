@@ -65,5 +65,10 @@ public class InventoryCatalogManager {
         System.out.println("Throughput: "
                 + (totalOperations / seconds) + " operations/second");
     }
+    public static void main(String[] args) throws InterruptedException {
+        benchmarkSynchronizedMap();
+        benchmarkConcurrentMap();
+    }
+}
 
 
