@@ -25,3 +25,21 @@ public class SensorGridMonitorApp {
         Thread t4 = new Thread(() ->
             max[1] = new ParallelMaxSearch(data, 25000, 50000).processGrid()
         );
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
+        t1.join();
+        t2.join();
+        t3.join();
+        t4.join();
+
+        long end = System.nanoTime();
+
+        System.out.println("Minimum: " + Math.min(min[0], min[1]));
+        System.out.println("Maximum: " + Math.max(max[0], max[1]));
+        System.out.println("Execution Time: "
+                + (end - start) / 1_000_000.0 + " ms");
+    }
+}
