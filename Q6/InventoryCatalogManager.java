@@ -49,5 +49,21 @@ public class InventoryCatalogManager {
                     done.countDown();
                 }
             });
-        }[]
+        }
+        start.countDown();
+        done.await();
+
+        long endTime = System.nanoTime();
+        pool.shutdown();
+
+        double seconds = (endTime - startTime) / 1_000_000_000.0;
+        int totalOperations = THREADS * OPERATIONS;
+
+        System.out.println(name);
+        System.out.println("Execution Time: "
+                + (seconds * 1000) + " ms");
+        System.out.println("Throughput: "
+                + (totalOperations / seconds) + " operations/second");
+    }
+
 
