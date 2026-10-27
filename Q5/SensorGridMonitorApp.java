@@ -14,16 +14,16 @@ public class SensorGridMonitorApp {
 
         long start = System.nanoTime();
         Thread t1 = new Thread(() ->
-            min[0] = new ParallelMinSearch(data, 0, 25000).processGrid()
+            min[0] = new ParallelMinSearch(data, 0, 25000).processGrid();
         );
         Thread t2 = new Thread(() ->
-            min[1] = new ParallelMinSearch(data, 25000, 50000).processGrid()
+            min[1] = new ParallelMinSearch(data, 25000, 50000).processGrid();
         );
         Thread t3 = new Thread(() ->
-            max[0] = new ParallelMaxSearch(data, 0, 25000).processGrid()
+            max[0] = new ParallelMaxSearch(data, 0, 25000).processGrid();
         );
         Thread t4 = new Thread(() ->
-            max[1] = new ParallelMaxSearch(data, 25000, 50000).processGrid()
+            max[1] = new ParallelMaxSearch(data, 25000, 50000).processGrid();
         );
         t1.start();
         t2.start();
