@@ -13,3 +13,23 @@ public class CacheLocalityBenchmark {
 
         return sum;
     }
+     static double traverseColumnMajor() {
+        double sum = 0;
+
+        for (int j = 0; j < N; j++) {
+            for (int i = 0; i < N; i++) {
+                sum += matrix[i][j];
+            }
+        }
+
+        return sum;
+    }
+    public static void main(String[] args) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = i + j;
+            }
+        }
+
+        double rowTime = 0;
+        double columnTime = 0;
