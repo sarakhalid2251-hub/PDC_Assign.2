@@ -1,5 +1,4 @@
 import java.util.concurrent.ForkJoinPool;
-
 public class ForkJoinPortfolioApp {
     public static void main(String[] args) {
         double[] assets = new double[10000];
@@ -25,7 +24,6 @@ public class ForkJoinPortfolioApp {
         System.out.println("Adjusted first asset: " + assets[0]);
         System.out.println("Execution time: "
                 + (endTime - startTime) / 1_000_000.0 + " ms");
-
         pool.shutdown();
     }
 }

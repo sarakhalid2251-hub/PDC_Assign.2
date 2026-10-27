@@ -1,5 +1,4 @@
 import java.util.concurrent.RecursiveAction;
-
 class PortfolioThresholdTask extends RecursiveAction {
     private double[] data;
     private int start;
@@ -24,7 +23,6 @@ class PortfolioThresholdTask extends RecursiveAction {
             }
         } else {
             int mid = (start + end) / 2;
-
             invokeAll(
                 new PortfolioThresholdTask(data, start, mid, riskCap),
                 new PortfolioThresholdTask(data, mid, end, riskCap)
