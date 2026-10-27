@@ -5,7 +5,6 @@ public class SensorGridMonitorApp {
         for (int i = 0; i < data.length; i++) {
             data[i] = (i * 7) % 1000;
         }
-
         data[123] = -10;
         data[456] = 2000;
 
