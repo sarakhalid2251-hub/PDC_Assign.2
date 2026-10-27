@@ -42,3 +42,16 @@ public class CacheLocalityBenchmark {
             traverseColumnMajor();
             columnTime += System.nanoTime() - start;
         }
+        rowTime /= 10;
+        columnTime /= 10;
+
+        System.out.println("Average Row-Major: "
+                + rowTime / 1_000_000.0 + " ms");
+
+        System.out.println("Average Column-Major: "
+                + columnTime / 1_000_000.0 + " ms");
+
+        System.out.println("Speedup Ratio (Column / Row): "
+                + columnTime / rowTime);
+    }
+}
