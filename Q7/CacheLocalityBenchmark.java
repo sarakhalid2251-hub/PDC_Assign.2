@@ -30,7 +30,6 @@ public class CacheLocalityBenchmark {
                 matrix[i][j] = i + j;
             }
         }
-
         double rowTime = 0;
         double columnTime = 0;
         for (int i = 1; i <= 10; i++) {
@@ -44,7 +43,6 @@ public class CacheLocalityBenchmark {
         }
         rowTime /= 10;
         columnTime /= 10;
-
         System.out.println("Average Row-Major: "
                 + rowTime / 1_000_000.0 + " ms");
 
