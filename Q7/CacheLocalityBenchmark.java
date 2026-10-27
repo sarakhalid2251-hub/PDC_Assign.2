@@ -33,3 +33,12 @@ public class CacheLocalityBenchmark {
 
         double rowTime = 0;
         double columnTime = 0;
+        for (int i = 1; i <= 10; i++) {
+            long start = System.nanoTime();
+            traverseRowMajor();
+            rowTime += System.nanoTime() - start;
+
+            start = System.nanoTime();
+            traverseColumnMajor();
+            columnTime += System.nanoTime() - start;
+        }
